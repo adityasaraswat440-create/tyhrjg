@@ -156,4 +156,52 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ------------------------------------------
+     Contact Us Popup
+  ------------------------------------------ */
+  const contactLink = document.getElementById('nav-contact-link');
+  const contactPopup = document.getElementById('contact-popup');
+  const closeContactBtn = document.getElementById('close-contact-popup');
+
+  if (contactLink && contactPopup) {
+    contactLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      contactPopup.classList.add('is-active');
+    });
+
+    closeContactBtn.addEventListener('click', () => {
+      contactPopup.classList.remove('is-active');
+    });
+
+    contactPopup.addEventListener('click', (e) => {
+      if (e.target === contactPopup) {
+        contactPopup.classList.remove('is-active');
+      }
+    });
+  }
+
+  /* ------------------------------------------
+     Start Project Popup
+  ------------------------------------------ */
+  const startCtaBtn = document.getElementById('nav-cta');
+  const startPopup = document.getElementById('start-project-popup');
+  const closeStartBtn = document.getElementById('close-start-popup');
+
+  if (startCtaBtn && startPopup) {
+    startCtaBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      startPopup.classList.add('is-active');
+    });
+
+    closeStartBtn.addEventListener('click', () => {
+      startPopup.classList.remove('is-active');
+    });
+
+    startPopup.addEventListener('click', (e) => {
+      if (e.target === startPopup) {
+        startPopup.classList.remove('is-active');
+      }
+    });
+  }
+
 });
